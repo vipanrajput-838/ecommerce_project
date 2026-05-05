@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipan Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <header class="nav-header">
+        <a href="#" class="logo">
+            <img src="img/vipan_shop_logo_1776897650889.png" alt="Vipan Shop Logo">
+        </a>
+        <div class="nav-actions">
+            <button class="nav-btn" id="auth-btn">LOGIN</button>
+            <button class="nav-btn" id="cart-btn">CART (0)</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="headline" id="hero-headline">
+                    <span>B</span><span>A</span><span>Z</span><span>A</span><span>A</span><span>R</span>
+                </h1>
+                <p class="sub-headline">A highly curated collection of premium goods and modern essentials.</p>
+            </div>
+        </section>
+
+        <section class="intro">
+            <span class="intro-overline">THE VIPAN SHOP EXPERIENCE</span>
+            <h2>Premium collections curated with a focus on <i>timeless design</i> and seamless interaction.</h2>
+        </section>
+
+        <!-- Category Filters -->
+        <div class="category-filters-wrapper">
+            <div id="category-filters" class="category-filters">
+                <button class="cat-btn active" data-id="all">All Products</button>
+            </div>
+        </div>
+
+        <section class="project-grid" id="product-grid">
+            <!-- Products injected here via JS -->
+            <p>Loading catalog...</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="col-brand">
+                <img src="img/vipan_shop_logo_1776897650889.png" alt="Vipan Shop Logo" class="footer-logo-img">
+                <p>A premium destination shaping the future of retail.</p>
+            </div>
+            <div class="col-socials">
+                <h4>SOCIALS</h4>
+                <ul><li><a href="https://www.instagram.com/_vipan_rajput__?igsh=MTg5Y3doaDRxODR5" target="_blank">Instagram</a></li><li><a href="https://www.linkedin.com/in/vipan-rajput-b10069253?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a></li></ul>
+            </div>
+            <div class="col-contact">
+                <h4>CONTACT</h4>
+                <ul><li><a href="mailto:vipanrajput838@gmail.com">vipanrajput838@gmail.com</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VIPAN STUDIO. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-content">
+            <button class="close-btn" id="close-auth">×</button>
+            <h2 id="auth-title">Login</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="email" id="email" placeholder="Email (for register)" style="display:none;">
+                <button type="submit" class="primary-btn">Submit</button>
+            </form>
+            <p class="auth-toggle">Need an account? <a href="#" id="toggle-auth-mode">Register</a></p>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="product-modal-content">
+            <button class="close-btn" id="close-product-modal">×</button>
+            <div class="product-modal-grid">
+                <div class="product-modal-image">
+                    <img id="detail-image" src="" alt="">
+                </div>
+                <div class="product-modal-info">
+                    <span class="category" id="detail-category"></span>
+                    <h2 id="detail-title"></h2>
+                    <p class="mono" id="detail-price"></p>
+                    <p class="description" id="detail-description"></p>
+                    <button class="primary-btn" id="detail-add-cart">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <button class="close-btn" id="close-cart">×</button>
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="total">Total: ₹<span id="cart-total">0.00</span></div>
+            <button class="primary-btn" id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

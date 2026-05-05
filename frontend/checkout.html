@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | Vipan Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="checkout-page">
+    <div class="custom-cursor" id="custom-cursor"></div>
+
+    <header class="nav-header" style="position: relative; border-bottom: 1px solid rgba(0,0,0,0.1);">
+        <a href="index.html" class="logo">
+            <img src="img/vipan_shop_logo_1776897650889.png" alt="Vipan Shop Logo">
+        </a>
+        <a href="index.html" class="nav-btn" style="text-decoration: none;">← BACK TO SHOP</a>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-grid">
+            <div class="checkout-form-section">
+                <h2>Shipping Address</h2>
+                <form id="checkout-form" class="premium-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                    <input type="text" placeholder="Complete Address" required>
+                    <div class="form-row">
+                        <input type="text" placeholder="City" required>
+                        <input type="text" placeholder="State" required>
+                        <input type="text" placeholder="PIN Code" required>
+                    </div>
+                    <input type="tel" placeholder="Mobile Number" required>
+
+                    <h2 class="mt-4">Payment Method</h2>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="upi" checked>
+                            <span class="pay-box">UPI (GPay, PhonePe, Paytm)</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <span class="pay-box">Credit / Debit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cod">
+                            <span class="pay-box">Cash on Delivery</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="primary-btn w-100 mt-4" id="place-order-btn">PLACE SECURE ORDER</button>
+                </form>
+            </div>
+
+            <div class="checkout-summary-section">
+                <h2>Order Summary</h2>
+                <div id="checkout-items" class="checkout-items">
+                    <!-- Items injected here -->
+                </div>
+                <div class="summary-totals">
+                    <div class="summary-line"><span>Subtotal</span> <span id="summ-subtotal">₹0</span></div>
+                    <div class="summary-line"><span>GST (18%)</span> <span id="summ-gst">₹0</span></div>
+                    <div class="summary-line"><span>Delivery Charge</span> <span id="summ-delivery">₹99.00</span></div>
+                    <div class="summary-line"><span>Platform Fee</span> <span id="summ-platform">₹20.00</span></div>
+                    <div class="summary-line total"><span>Total</span> <span id="summ-total">₹0</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content success-pop" style="text-align: center; padding: 4rem 3rem; max-width: 500px;">
+            <img src="img/vipan_shop_logo_1776897650889.png" alt="Vipan Shop Logo" style="height: 60px; margin-bottom: 2rem;">
+            <div class="checkmark-circle">
+                <svg viewBox="0 0 52 52" class="checkmark-svg">
+                    <circle cx="26" cy="26" r="25" fill="none" class="checkmark-circle-path"/>
+                    <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" class="checkmark-check"/>
+                </svg>
+            </div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 1rem;">Your Order Has Been Placed!</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 3rem; line-height: 1.6;">Thank you for using Vipan Shop. Your premium goods are being securely prepared for delivery.</p>
+            <a href="index.html" class="primary-btn w-100" style="text-decoration: none; display: inline-block;">RETURN TO STORE</a>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
