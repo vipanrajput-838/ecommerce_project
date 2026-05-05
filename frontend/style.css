@@ -19,6 +19,10 @@ p { font-weight: 400; letter-spacing: -0.02em; line-height: 1.5; }
 
 .custom-cursor { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--text-primary); background-color: var(--bg-primary); position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; mix-blend-mode: difference; transform: translate(-50%, -50%); will-change: transform; }
 
+@media (pointer: coarse) {
+    * { cursor: auto !important; }
+    .custom-cursor { display: none !important; }
+}
 .nav-header { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem 6rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.1); }
 .logo { display: flex; align-items: center; text-decoration: none; z-index: 100; }
 .logo img { height: 80px; width: auto; object-fit: contain; }

@@ -58,8 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if(closeProductModal) {
         closeProductModal.addEventListener('click', () => {
             productModal.classList.remove('active');
+            if (history.state && history.state.modalOpen) {
+                history.back();
+            }
         });
     }
+
+    // Handle mobile back button
+    window.addEventListener('popstate', (e) => {
+        if (productModal && productModal.classList.contains('active')) {
+            productModal.classList.remove('active');
+        }
+    });
 
     window.openProductDetail = (id) => {
         const product = allProducts.find(p => p.id === id);
@@ -79,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         
         productModal.classList.add('active');
+        history.pushState({ modalOpen: true }, "", "#product-" + id);
     };
 
     // Auth logic
