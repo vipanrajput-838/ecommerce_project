@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // State
-    // TODO: When deploying the frontend, change this to your Render URL (e.g., 'https://your-app.onrender.com/api')
-    const API_URL = 'http://127.0.0.1:8000/api';
+    // Live Render URL
+    const API_URL = 'https://vipan-ecommerce-api.onrender.com/api';
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let token = localStorage.getItem('access_token');
     
